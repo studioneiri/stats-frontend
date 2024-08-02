@@ -2,6 +2,7 @@ import './App.css'
 import {Location} from "./components/Location";
 import axios from "axios";
 import React from "react";
+import {Card} from "antd";
 
 export interface LocationStats {
   id: string;
@@ -47,7 +48,9 @@ function App() {
       <h1>Locations in History</h1>
       <div className="card">
         {locations.map((location) => (
-            <Location key={location.name} {...location} />
+            <Card>
+              <Location key={location.name} {...location} />
+            </Card>
         ))}
       </div>
     </>
